@@ -4,11 +4,11 @@ use strict;
 use warnings;
 
 use overload
-    q{""}    => sub { sprintf q{%s: %s}, $_[0]->type, $_[0]->description },
-    fallback => 1;
+  q{""}    => sub { sprintf q{%s: %s}, $_[0]->type, $_[0]->description },
+  fallback => 1;
 
 sub new {
-    my ($class, %args) = @_;
+    my ( $class, %args ) = @_;
     bless {
         description => $args{description} || '',
         state       => $args{state}       || '',
@@ -17,14 +17,14 @@ sub new {
 }
 
 sub throw {
-    my ($class, %args) = @_;
+    my ( $class, %args ) = @_;
     die $class->new(%args);
 }
 
-sub code        { $_[0]->{code}         }
+sub code        { $_[0]->{code} }
 sub type        { die "abstract method" }
-sub description { $_[0]->{description}  }
-sub state       { $_[0]->{state}        }
+sub description { $_[0]->{description} }
+sub state       { $_[0]->{state} }
 
 # OAuth Server Error
 package CatalystX::OAuth2::Provider::Error::InvalidRequest;

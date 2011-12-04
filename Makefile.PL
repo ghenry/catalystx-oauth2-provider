@@ -17,7 +17,10 @@ requires 'JSON::XS';
 requires 'HTTP::Headers::Util';
 requires 'Digest::HMAC_SHA1';
 requires 'namespace::autoclean';
+requires 'Regexp::Common';
 
+build_requires 'Module::Install::AuthorRequires';
+build_requires 'Module::Install::AuthorTests';
 build_requires 'Catalyst::Runtime' => '5.80015';
 build_requires 'Test::WWW::Mechanize::Catalyst';
 build_requires 'Test::More' => '0.88';
